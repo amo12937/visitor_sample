@@ -2,9 +2,7 @@
 
 import React from "react"
 
-import ExprInput from "components/ExprInput"
-
-export default class App extends React.Component {
+export default class ExprInput extends React.Component {
   render() {
     return (
       <div className="input">
