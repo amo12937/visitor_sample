@@ -1,11 +1,11 @@
 "use strict";
 
-import VisitorView from "components/visitor/Visitor"
+import VisitorComponent from "components/visitor/Visitor"
 import InfixNotationVisitor from "models/visitor/InfixNotationVisitor"
 
-export default class InfixNotation extends VisitorView {
+export default class InfixNotation extends VisitorComponent {
   constructor(props) {
-    super(props, "中置記法", new InfixNotationVisitor());
+    super(props, "InfixNotation", new InfixNotationVisitor());
   }
 }
 

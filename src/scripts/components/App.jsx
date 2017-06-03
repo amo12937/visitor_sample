@@ -3,15 +3,14 @@
 import React from "react"
 
 import ExprInput from "components/ExprInput"
-import Calculate from "components/Calculate"
-import Rpn from "components/Rpn"
+import Calculate from "components/visitor/Calculate"
+import Rpn from "components/visitor/Rpn"
 import InfixNotation from "components/visitor/InfixNotation"
+import PolishNotation from "components/visitor/PolishNotation"
 
 import Tokenizer from "models/Tokenizer"
 import Parser from "models/Parser"
 import nodeFactory from "models/Node"
-
-import InfixNotationVistor from "models/visitor/InfixNotationVisitor"
 
 export default class App extends React.Component {
   constructor(props) {
@@ -37,6 +36,7 @@ export default class App extends React.Component {
         <Calculate node={node} />
         <InfixNotation node={node} />
         <Rpn node={node} />
+        <PolishNotation node={node} />
       </div>
     );
   }
