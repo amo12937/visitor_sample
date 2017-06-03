@@ -7,6 +7,7 @@ import Calculate from "components/visitor/Calculate"
 import Rpn from "components/visitor/Rpn"
 import InfixNotation from "components/visitor/InfixNotation"
 import PolishNotation from "components/visitor/PolishNotation"
+import Dot from "components/visitor/Dot"
 
 import Tokenizer from "models/Tokenizer"
 import Parser from "models/Parser"
@@ -37,6 +38,7 @@ export default class App extends React.Component {
         <InfixNotation node={node} />
         <Rpn node={node} />
         <PolishNotation node={node} />
+        <Dot node={node} />
       </div>
     );
   }
