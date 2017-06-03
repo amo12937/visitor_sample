@@ -1,5 +1,7 @@
 "use strict";
 
+import Lexer from "models/Lexer"
+
 export default class Tokenizer {
   tokenize(code) {
     var chunk = code;
@@ -13,14 +15,14 @@ export default class Tokenizer {
       chunk = code.slice(i);
     }
 
-    return tokens;
+    return new Lexer(tokens);
   }
 
   numberToken(chunk, tokens) {
     const match = chunk.match(/^\d+/);
     if (!match) return 0;
     tokens.push({
-      name: "number",
+      name: "NUMBER",
       value: Number(match[0])
     });
     return match[0].length;
@@ -40,9 +42,6 @@ export default class Tokenizer {
     const match = chunk.match(/^[^-+*\/()0-9]+/);
     if (!match) return 0;
     return match[0].length;
-  }
-
-  f(code, i) {
   }
 }
 

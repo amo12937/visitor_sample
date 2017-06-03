@@ -2,7 +2,8 @@
 
 export default class CalculateVisitor {
   visit(node) {
-    return node.accept(this, null);
+    const result = node.accept(this, null);
+    return result == null ? "?" : result;
   }
 
   visitNumberNode(node, _) {

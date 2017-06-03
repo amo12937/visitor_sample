@@ -23,6 +23,10 @@ class Node {
   value() {
     return this._value;
   }
+
+  isUnknown() {
+    return false;
+  }
 }
 
 class InnerNode extends Node {
@@ -89,11 +93,19 @@ class UnknownInnerNode extends InnerNode {
   constructor(left, right) {
     super(left, right, "UnknownInnerNode", "?");
   }
+
+  isUnknown() {
+    return true;
+  }
 }
 
 class UnknownLeafNode extends LeafNode {
   constructor() {
     super("UnknownLeafNode", "?");
+  }
+
+  isUnknown() {
+    return true;
   }
 }
 
