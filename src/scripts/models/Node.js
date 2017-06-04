@@ -13,7 +13,7 @@ export default {
 class Node {
   constructor(name, value) {
     this._name = name;
-    this._value = value ? value : name;
+    this._value = value != null ? value : name;
   }
 
   name() {
