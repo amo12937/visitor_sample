@@ -33,6 +33,7 @@ export default class App extends React.Component {
     var node = this.state.node
     return (
       <div className="app">
+        <div>(, ), +, -, *, / and number are available.</div>
         <ExprInput handleChange={this.updateExpr} />
         <Calculate node={node} />
         <InfixNotation node={node} />
